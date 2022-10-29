@@ -1,0 +1,36 @@
+<%- include ('partials/header.ejs'); %>
+<body>
+    <%- include ('partials/navbar.ejs'); %>
+    <br>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+      <h1><%= id.title%></h1>
+      <p><%= id.description%></p>
+    </div>               
+  </div>
+  <hr>
+
+      <h3>Respostas</h3>
+      <br>
+      <% res.forEach((respostas) =>{ %>
+        <div class="card">
+          <div class="card-body">
+              <p class="respostas"><%=respostas.corpo%></p>
+              <p class="create"><%=respostas.createdAt%></p>
+          </div>               
+        </div>
+        <br>
+      <%})%>
+
+      <hr>
+      <form action="/resposta" method="post">
+        <textarea placeholder="Digite sua resposta" class="form-control" name="corpo"></textarea>
+        <br>
+        <input type="hidden" name="pergunta" value="<%= id.id%>" alt="GAMBIARRA - fazendo o Botão Atrelado ao ID para mandar ao Banco EXISTENTE"> 
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+
+</body>
+<%- include ('partials/footer.ejs'); %>

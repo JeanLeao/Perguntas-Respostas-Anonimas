@@ -1,0 +1,28 @@
+<%- include ('partials/header.ejs'); %>
+<body>
+<%- include ('partials/navbar.ejs'); %>
+
+    <div class="container">
+
+        <hr>
+        <h1>Peguntas:</h1>
+        <hr>
+        <a class="btn btn-primary" href="/perguntar">Fazer Pergunta</a>
+        <br>
+        <br>
+        <% quest.forEach((perguntas) =>{ %>
+        <div class="card">
+                <div class="card-body">
+                    <h3><%=perguntas.title%></h3>
+                    <p><%=perguntas.description%></p>
+                </div>
+                <div class="card-footer">
+                    <a href="/pergunta/<%=perguntas.id%>"><button class="btn btn-primary">Resposta</button></a>
+                </div>                
+        </div>
+            <br>
+        <% }) %>
+       
+    </div>
+</body>
+<%- include ('partials/footer.ejs'); %>

@@ -1,0 +1,12 @@
+body{
+    background-color: darkgray;
+}
+
+.create{
+    font-family: monospace;
+    font-size: 10px;
+}
+
+.respostas{
+    font-size: 20px;
+}
